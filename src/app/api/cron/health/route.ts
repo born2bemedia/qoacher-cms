@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import payload from 'payload'
 
-export const runtime = 'edge'
+export const runtime = 'nodejs'
 
 export async function GET(request: Request) {
   // Verify the request is from Vercel Cron
@@ -11,6 +11,7 @@ export async function GET(request: Request) {
   }
 
   try {
+    // Simple query to keep the database active
     await payload.find({
       collection: 'users',
       limit: 1,
