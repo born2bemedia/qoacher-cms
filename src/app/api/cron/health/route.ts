@@ -1,8 +1,6 @@
 import { NextResponse } from 'next/server'
 import payload from 'payload'
 
-export const runtime = 'nodejs'
-
 export async function GET(request: Request) {
   // Verify the request is from Vercel Cron
   const authHeader = request.headers.get('authorization')
