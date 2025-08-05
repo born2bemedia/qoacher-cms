@@ -257,6 +257,8 @@ export interface Article {
     };
     [k: string]: unknown;
   } | null;
+  seo_title?: string | null;
+  seo_description?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -435,6 +437,8 @@ export interface ArticlesSelect<T extends boolean = true> {
   slug?: T;
   category?: T;
   content?: T;
+  seo_title?: T;
+  seo_description?: T;
   updatedAt?: T;
   createdAt?: T;
 }

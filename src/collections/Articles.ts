@@ -78,5 +78,19 @@ export const Articles: CollectionConfig = {
       label: 'Content',
       localized: true,
     },
+    {
+      name: 'seo_title',
+      type: 'text',
+      label: 'SEO Title',
+      required: false,
+      localized: true,
+    },
+    {
+      name: 'seo_description',
+      type: 'text',
+      label: 'SEO Description',
+      required: false,
+      localized: true,
+    },
   ],
 }
