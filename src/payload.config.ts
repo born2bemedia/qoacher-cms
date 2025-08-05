@@ -31,6 +31,10 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
+  localization: {
+    locales: ['en', 'de', 'it'],
+    defaultLocale: 'en',
+  },
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
