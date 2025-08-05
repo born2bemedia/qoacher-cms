@@ -1,8 +1,8 @@
 import type { CollectionConfig } from 'payload'
 import slugify from 'slugify'
 
-export const Policies: CollectionConfig = {
-  slug: 'policies',
+export const Articles: CollectionConfig = {
+  slug: 'articles',
   admin: {
     useAsTitle: 'title',
   },
@@ -18,6 +18,30 @@ export const Policies: CollectionConfig = {
       type: 'text',
       label: 'Title',
       required: true,
+      localized: true,
+    },
+    {
+      name: 'image',
+      type: 'upload',
+      label: 'Image',
+      required: true,
+      relationTo: 'media',
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'excerpt',
+      type: 'text',
+      label: 'Excerpt',
+      required: true,
+      localized: true,
+    },
+    {
+      name: 'subtitle',
+      type: 'text',
+      label: 'Subtitle',
+      required: false,
       localized: true,
     },
     {
@@ -39,10 +63,11 @@ export const Policies: CollectionConfig = {
       },
     },
     {
-      name: 'lastUpdate',
-      type: 'date',
-      label: 'Last Update',
-      defaultValue: new Date(),
+      name: 'category',
+      type: 'text',
+      label: 'Category',
+      required: true,
+      localized: true,
       admin: {
         position: 'sidebar',
       },
