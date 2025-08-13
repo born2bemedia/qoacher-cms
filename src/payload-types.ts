@@ -211,7 +211,7 @@ export interface Order {
       }[]
     | null;
   total: number;
-  status: 'pending' | 'completed' | 'cancelled';
+  status?: ('pending' | 'completed' | 'failed') | null;
   paymentMethod?: string | null;
   orderNotes?: string | null;
   billingAddress?: {
@@ -226,7 +226,9 @@ export interface Order {
     zip?: string | null;
   };
   createdAt: string;
-  documents?: (number | null) | Media;
+  summary?: (number | null) | Media;
+  plan?: (number | null) | Media;
+  report?: (number | null) | Media;
   invoice?: (number | null) | Media;
   updatedAt: string;
 }
@@ -421,7 +423,9 @@ export interface OrdersSelect<T extends boolean = true> {
         zip?: T;
       };
   createdAt?: T;
-  documents?: T;
+  summary?: T;
+  plan?: T;
+  report?: T;
   invoice?: T;
   updatedAt?: T;
 }

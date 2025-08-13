@@ -61,10 +61,10 @@ export const Orders: CollectionConfig = {
       options: [
         { label: 'Pending', value: 'pending' },
         { label: 'Completed', value: 'completed' },
-        { label: 'Cancelled', value: 'cancelled' },
+        { label: 'Failed', value: 'failed' },
       ],
       defaultValue: 'pending',
-      required: true,
+      required: false,
     },
     {
       name: 'paymentMethod',
@@ -102,10 +102,30 @@ export const Orders: CollectionConfig = {
       defaultValue: () => new Date().toISOString(),
     },
     {
-      name: 'documents',
+      name: 'summary',
       type: 'upload',
       relationTo: 'media',
-      label: 'Documents',
+      label: 'Summary',
+      required: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'plan',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Plan',
+      required: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'report',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Report',
       required: false,
       admin: {
         position: 'sidebar',
